@@ -1,4 +1,4 @@
-// Loop detection in linked list * TO DO 
+// Loop detection in linked list
 class LinkedList {
     constructor (value){
         this.value = value;
@@ -10,18 +10,16 @@ var loopDetection = (list) => {
     let head = list;
     let loop = list;
     while (head !== null){
-        head = head.next;
-        loop = loop.next;
+        head = head.next; // list.next
+        loop = loop.next; // list.next
         
         if ( head === loop && head !== list.next){
             return head;
         }
 
-        if (head !== null){
-            head = head.next;
-            if (head === loop) {
-                return loop;
-            }
+        head = head.next; // list.next.next (comparison starts)
+        if (head === loop) {
+            return loop;
         }
     }
     return false;
@@ -43,6 +41,6 @@ b.next = c;
 c.next = d;
 d.next = e;
 e.next = f;
-f.next = c;
+f.next = b;
 
 console.log(loopDetection(a));
