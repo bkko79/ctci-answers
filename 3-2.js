@@ -39,9 +39,11 @@ class stackMin {
             this.min = this.minStack.shift();
         } else {
             let i = 0;
-            while (this.minStack[i]){
+            let deletion = false;
+            while (!deletion){
                 if (value == this.minStack[i]){
                     this.minStack.splice(i, 1); //remove same value from minStack
+                    deletion = true;            //same value will be skipped for next pop
                 }
                 i++;
             }
@@ -66,6 +68,9 @@ t.push(7);
 t.push(3);
 t.push(4);
 t.push(8);
+t.push(9);
+t.push(9);
+t.push(9);
 t.push(9);
 t.push(1);
 console.log(t);
