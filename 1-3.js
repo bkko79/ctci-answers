@@ -3,11 +3,11 @@ var urlify = function( string ){
     if ( string.length <= 0 ){
         return false;
     }
-    var url = string.replace(' ', '%20');
+    var url = string.encodeURIComponent();
     return url
 };
 
-//URLify (with char array)
+//URLify (with char array)  
 var urlifyArray = function(string){
     var strArr  = string.split('');
     var pointer = 0;
