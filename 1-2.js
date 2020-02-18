@@ -1,7 +1,8 @@
 //Is Permute
 var checkPermute = function (stringOne, stringTwo) {
 
-    //O(N^2)
+    //O(n log n)
+    //split : n; sort : n log n; join : n * 2
     if (stringOne.length !== stringTwo.length) {
         return false; // No permutation match
 
