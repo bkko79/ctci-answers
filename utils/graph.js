@@ -33,7 +33,12 @@ class Graph {
       if (this.nodes[node] === undefined){
           return 'node does not exists'
       } else {
-          this.nodes[node][edge] = true;
+          delete this.nodes[node];
+          for(let currNode in this.nodes){
+              if(this.nodes[currNode][node] !== undefined){
+                  delete this.nodes[currNode][node];
+              }
+          }
       }
   }
 
@@ -55,6 +60,10 @@ class Graph {
       } else {
           return this.nodes[node][edge] !== undefined;
       }
+  }
+
+  getNodes(){
+      return this.nodes;
   }
 };
 
