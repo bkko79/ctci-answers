@@ -109,7 +109,7 @@ class Player{
         if (hit){
             this.hit = true;
         } else {
-            this.fit = false;
+            this.hit = false;
         }
         return this.hit;
     }
