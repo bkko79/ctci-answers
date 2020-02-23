@@ -16,7 +16,7 @@ class Blackjack{
                 let score  = player.score;
                 player.decide(); // hit or not
                 if(player.hit){
-                    players.hands.push(drawCard());
+                    players.hands.push(this.deck.draw());
                     score = calculateScore(player);
                 }
                 if (score <= 21 ){
