@@ -14,16 +14,16 @@ class Blackjack{
             while(!finished){
                 let player = this.players.shift();
                 let score  = player.score;
-                player.decide();
+                player.decide(); // hit or not
                 if(player.hit){
                     players.hands.push(drawCard());
                     score = calculateScore(player);
                 }
                 if (score <= 21 ){
                     player.decide(); //player need to react manually
-                    this.players.unshift(player);
+                    if (player.hit) this.players.unshift(player);
                 }
-                if (this.players.isEmpty()){ //final Check;
+                if (this.players.isEmpty()){ // Every player stood.
                     finished = true;
                 }
             }
