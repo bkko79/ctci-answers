@@ -6,15 +6,15 @@ var isSimilar = function(strA, strB){
         if (first.length !== second.length -1 ){
             return false;
         } else {
-            var mulligan = false; //more than 2 is wrong
+            var found = false; //more than 2 is wrong
             var fp = 0; //first pointer
             var sp = 0; //second pointer
             while ( fp < first.length ){
                 if (first[fp] !== second[sp]){
-                    if (mulligan) {
+                    if (found) {
                         return false;
                     } else {
-                        mulligan = true;
+                        found = true;
                         sp++;
                     }
                 } else {
@@ -30,15 +30,15 @@ var isSimilar = function(strA, strB){
         if (first.length !== second.length){
             return false;
         } else {
-            var mulligan = false; //more than 2 is wrong
+            var found = false; //more than 2 is wrong
             var fp = 0; //first pointer
             var sp = 0; //second pointer
             while (fp < first.length){
                 if (first[fp] !== second[sp]){
-                    if(mulligan){
+                    if(found){
                         return false;
                     } else {
-                        mulligan = true;
+                        found = true;
                     }
                 }
                 fp++;

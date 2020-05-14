@@ -3,7 +3,7 @@ var isPermutationOfPalindrome = function(string){
 
     // N(O)
     var chars = {};
-    var mulligun = false;
+    var found = false;
     var result = true;
     string.split('').forEach((char) => {
         if ( char !== ' ') {
@@ -16,10 +16,10 @@ var isPermutationOfPalindrome = function(string){
     });
     Object.keys(chars).forEach((char) => {
         if (chars[char] % 2 > 0){
-            if (mulligun){
+            if (found){
                 result = false;
             } else {
-                mulligun = true;
+                found = true;
             }
         }
     });
