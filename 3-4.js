@@ -11,7 +11,7 @@ class queueInStack{
     }
 
     remove(){
-        if (!this.rmStack.length == 0){  
+        if (this.rmStack.length !== 0){  
             return this.rmStack.pop();
         } else {
             while(this.addStack.length !== 0){ // lazy stack
@@ -22,7 +22,7 @@ class queueInStack{
     }
 
     peek(){
-        if (!this.rmStack.length == 0){
+        if (this.rmStack.length !== 0){
             return this.rmStack[this.rmStack.length-1];
         } else {
             return this.addStack[0];
@@ -46,6 +46,7 @@ m.add('e');
 console.log(m);
 console.log(m.peek());
 m.remove();
+console.log(m);
 m.remove();
 m.remove();
 m.add('f');
@@ -54,6 +55,7 @@ m.add('h');
 console.log(m);
 console.log(m.peek());
 m.remove();
+console.log(m);
 m.remove();
 m.remove();
 console.log(m);
