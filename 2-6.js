@@ -15,11 +15,7 @@ var isPalindrome = function(list){
         text += list.value;
         list = list.next;
     }
-    if ( text == text.split('').reverse('').join('') ) {
-        return true;
-    } else {
-        return false;
-    }
+    return text == text.split('').reverse('').join('')
 }
 
 /* TEST */
