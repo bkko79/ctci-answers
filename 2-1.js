@@ -31,6 +31,23 @@ var removeDuplicated = function (head){
     }
 }
 
+var removeDuplicatedWithSet = function(head){
+    const _set = new Set()
+    let current = head
+    let prev = null
+    while (current){
+        if (_set.has(current.value)){
+            prev.next = current.next
+            prev = current
+            current = current.next
+        } else {
+            _set.add(current.value)
+            prev    = current
+            current = current.next
+        }
+    }
+}
+
 var printLinkedList = function(head) {
     var node = head;
     console.log('start of linked list');
@@ -45,13 +62,15 @@ var printLinkedList = function(head) {
 /* LinkedList Preset in JS */
 var a = new LinkedList('a');
 var b = new LinkedList('b');
+var b = new LinkedList('b');
 var c = new LinkedList('c');
 var d = new LinkedList('c');
+var c = new LinkedList('c');
 
 a.next = b;
 b.next = c;
 c.next = d;
 
 /* test */
-removeDuplicated(a);
+removeDuplicatedWithSet(a);
 printLinkedList(a);
