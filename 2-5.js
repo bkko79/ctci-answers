@@ -13,8 +13,7 @@ var getNumber = function(node){
         if (num === 0){
             num += node.value;
         } else {
-            node.value *= 10**i;
-            num += node.value;
+            num += node.value * (10**i);
         }
         node = node.next;
         i++;
@@ -23,20 +22,18 @@ var getNumber = function(node){
 }
 
 var getSum = function(lists){
-    let sum = 0;
+    let sum;
     if (Array.isArray(lists)){
-        lists.forEach(list => {
-            sum += getNumber(list);
-        });
+        sum = lists.reduce( (acc, cur) => {
+            return acc + getNumber(cur)
+        }, 0 )
         return sum;
-    } else {
-        return false;
     }
 }
 
 var a = new LinkedList(7);
 var b = new LinkedList(1);
-var c = new LinkedList(6); // = 617
+var c = new LinkedList(7); // = 717
 
 a.next = b;
 b.next = c;
