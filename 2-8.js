@@ -1,4 +1,4 @@
-// Loop detection in linked list
+// slower detection in linked list
 class LinkedList {
     constructor (value){
         this.value = value;
@@ -6,23 +6,23 @@ class LinkedList {
     }
 }
 
-var loopDetection = (list) => {
-    let head = list;
-    let loop = list;
-    while (head !== null){
-        head = head.next; // list.next
-        loop = loop.next; // list.next
+var slowerDetection = (list) => {
+    let faster = list;
+    let slower = list;
+    while (faster !== null){
+        faster = faster.next; // list.next
+        slower = slower.next; // list.next
         
-        if ( head === loop && head !== list.next){
-            return head;
+        if ( faster === slower && faster !== list.next){
+            return faster;
         }
 
-        head = head.next; // list.next.next (comparison starts)
-        if (head === loop) {
-            return loop;
+        faster = faster.next; // list.next.next (comparison starts)
+        if (faster === slower) {
+            return slower;
         }
     }
-    return false;
+    return null;
 }
 
 
@@ -43,4 +43,4 @@ d.next = e;
 e.next = f;
 f.next = b;
 
-console.log(loopDetection(a));
+console.log(slowerDetection(a));
