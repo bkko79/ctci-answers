@@ -28,7 +28,7 @@ class setOfStacks {
         if (this.stackSet[value-1]){
             return this.stackSet[value-1].pop();
         } else {
-            return false;
+            return null;
         }
     }
 }
@@ -48,5 +48,6 @@ console.log(stack);
 
 console.log(stack.popAt(1));
 console.log(stack.popAt(2));
+console.log(stack.popAt(3));
 
 console.log(stack);
