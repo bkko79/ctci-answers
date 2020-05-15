@@ -10,7 +10,7 @@ class LinkedList {
 var getIntersection = function(head1, head2){
 
     if (head1 === null || head2 === null){
-        return false;
+        return null;
     }
 
     while (head1 !== null){
@@ -23,7 +23,7 @@ var getIntersection = function(head1, head2){
         }
         head1 = head1.next;
     }
-    return false;
+    return null;
 }
 
 /* TEST */
@@ -48,10 +48,12 @@ g.next = h;
 var a1 = new LinkedList('a1');
 var b1 = new LinkedList('b1');
 var c1 = new LinkedList('c1');
+var d1 = new LinkedList('d1');
 
 a1.next = b1;
 b1.next = c1;
-c1.next = d;
+c1.next = d;  // intersection case
+//c1.next = d1; // No intersection case
 
 var intersectNode = getIntersection(a, a1);
 console.log(intersectNode.value);
