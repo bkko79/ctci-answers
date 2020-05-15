@@ -19,7 +19,7 @@ class setOfStacks {
         if (this.stackSet[this.stackSet.length-1].length !== 0){
             return this.stackSet[this.stackSet.length-1].pop();
         } else {
-            this.stackSet.filter(function() {return true; });
+            this.stackSet.pop();
             return this.stackSet[this.stackSet.length-1].pop();
         }
     }
@@ -43,6 +43,7 @@ stack.push(3);
 stack.push(4);
 stack.push(5);
 stack.push(6);
+stack.push(7);
 
 console.log(stack);
 
@@ -50,4 +51,13 @@ console.log(stack.popAt(1));
 console.log(stack.popAt(2));
 console.log(stack.popAt(3));
 
+console.log(stack);
+
+stack.pop();
+console.log(stack);
+
+stack.pop();
+console.log(stack);
+
+stack.pop();
 console.log(stack);
