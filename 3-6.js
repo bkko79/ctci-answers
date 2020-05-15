@@ -38,6 +38,24 @@ class animalShelter {
             return false;
         }
     }
+
+    popDog(){
+        this.counter--;
+        return this.dogQueue.shift();
+    }
+
+    popCat(){
+        this.counter--;
+        return this.catQueue.shift();
+    }
+
+    popAny(){
+        if (this.dogQueue[0].timestamp < this.catQueue[0].timestamp){
+            return this.popDog();
+        } else {
+            return this.popCat();
+        }
+    }
 }
 
 var t = new animalShelter();
@@ -48,7 +66,7 @@ t.push({"type": "cat", "name": "Manual"});
 t.push({"type": "dog", "name": "John"});
 t.push({"type": "cat", "name": "Sonny"});
 console.log(t);
-console.log(t.pop("cat"));
-console.log(t.pop("dog"));
-console.log(t.pop("any"));
+console.log(t.popCat());
+console.log(t.popDog());
+console.log(t.popAny());
 console.log(t);
