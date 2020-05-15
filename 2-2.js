@@ -10,14 +10,10 @@ class LinkedList {
 
 //Recursive until nth
 var findNthToLast = function (k, head){
-    if (head === null || k < 1){
-        return;
-    } else if ( k === 1){
-        console.log(head.value);
-        findNthToLast(k, head.next); // Prints every next nodes (K == 1) until head is null.
-    } else {
-        findNthToLast(k-1, head.next);
-    }
+    if (!head) return 0; // Can Return -1 if input for k is 0
+    let index = findNthToLast(k, head.next) + 1;
+    if (index === k) console.log(k + 'th to last node is ' + head.value);
+    return index;
 }
 
 /* LinkedList Preset in JS */
@@ -25,10 +21,12 @@ var a = new LinkedList('a');
 var b = new LinkedList('b');
 var c = new LinkedList('c');
 var d = new LinkedList('d');
+var e = new LinkedList('e');
 
 a.next = b;
 b.next = c;
 c.next = d;
+d.next = e;
 
 /* test */
-findNthToLast(3, a);
+findNthToLast(7, a);
