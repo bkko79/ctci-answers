@@ -2,7 +2,6 @@
 var zeroMatrix = function(matrix){
 
     // O(N)
-    var zeroPosition = [];
     var zeroifyRow = function(matrix, row){
         for( var i = 0; i < matrix[row].length; i++ ){
             matrix[row][i] = 0;
@@ -14,6 +13,7 @@ var zeroMatrix = function(matrix){
         }
     }
     var detectZero = function(matrix){
+        var zeroPosition = [];
         for(var i = 0; i < matrix.length; i++){
             for(var j = 0; j < matrix[i].length; j++){
                 if (matrix[i][j] === 0 ){
@@ -21,10 +21,11 @@ var zeroMatrix = function(matrix){
                 }
             }
         }
+        return zeroPosition
     }
 
-    detectZero(matrix);
-    zeroPosition.forEach(zero => {
+    var zeros = detectZero(matrix);
+    zeros.forEach(zero => {
         zeroifyRow(matrix, zero[0]);
         zeroifyCol(matrix, zero[1]);
     });
