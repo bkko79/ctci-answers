@@ -15,7 +15,7 @@ var isPermutationOfPalindrome = function(string){
         }
     });
     Object.keys(chars).forEach((char) => {
-        if (chars[char] % 2 > 0){
+        if (chars[char] % 2 === 1){
             if (found){
                 result = false;
             } else {
