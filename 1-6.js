@@ -3,8 +3,8 @@ var strComp = function(string){
     // O(N)
     var compressed = [];
     var current = '';
-    var count = '';
-    var max = 1;
+    var count;
+
     for (var i = 0; i < string.length; i++){
         if ( current == string[i]){
             count++;
@@ -25,3 +25,4 @@ var strComp = function(string){
 
 console.log(strComp("abbbbcccccceeeaaa"));
 console.log(strComp("aabbcc"));
+console.log(strComp("aabcc"));
